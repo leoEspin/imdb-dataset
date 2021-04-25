@@ -7,4 +7,4 @@ RUN pip install -r requirements.txt  --ignore-installed
 RUN mkdir -p  /trainer
 COPY trainer/. /trainer/
 
-ENTRYPOINT ["python", "trainer/trainer.py"]
+ENTRYPOINT ["python", "trainer/main.py"]

@@ -2,4 +2,3 @@ name: imdb
 dependencies:
   - python=3.7.8
   - tensorflow
-  - 
