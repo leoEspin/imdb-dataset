@@ -5,8 +5,7 @@ def get_and_pad_imdb_dataset(num_words=10000, maxlen=None, index_from=3):
     from tensorflow.keras.datasets import imdb
 
     # Load data with defaults https://www.tensorflow.org/api_docs/python/tf/keras/datasets/imdb/load_data
-    (x_train, y_train), (x_test, y_test) = imdb.load_data(path='imdb.npz',
-                                                          num_words=num_words,
+    (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=num_words,
                                                           skip_top=0,
                                                           maxlen=maxlen,
                                                           start_char=1,
