@@ -1,2 +1,2 @@
 # imdb-dataset
-Model-training and model-deployment code
+Training, deployment and testing code for a sentiment analysis model trained on the IMDB dataset
