@@ -1,5 +1,6 @@
 import tensorflow as tf
 import tensorflow.keras.datasets.imdb as imdb
+import re
 
 def get_and_pad_imdb_dataset(num_words=10000, maxlen=None, index_from=3):
     from tensorflow.keras.datasets import imdb
@@ -31,3 +32,14 @@ def get_imdb_word_index(num_words=10000, index_from=3):
     imdb_word_index = {key: value + index_from for
                        key, value in imdb_word_index.items() if value <= num_words-index_from}
     return imdb_word_index
+
+
+def clean_tokenize(text: str, word_index: dict, oov_char: int = 2, maxlen: int = 250)-> list:
+    '''
+    Simple preprocessing and tokenization
+    '''
+    words = re.findall(r'\w+', text)
+    tokens = [word_index[word] if word in word_index.keys() else oov_char for word in words]
+    if len(tokens) > maxlen:
+        return [tokens[:250]]
+    return [[0 for i in range(250 - len(tokens))] + tokens]
