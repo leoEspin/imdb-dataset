@@ -14,7 +14,7 @@ This repo uses a containerized workflow in Google Cloud to train the model. In a
         --max-seq-len=25
     ```
 
-    this will limit the text sequence size to 25 words to speed up the test training
+    this will limit the text-sequence size to 25 words, to speed up the test training
 * Push the container to your container registry
 
     ```bash
@@ -27,6 +27,6 @@ This repo uses a containerized workflow in Google Cloud to train the model. In a
 	gcloud ai-platform jobs submit training lstm_$(date +"%Y%m%d_%H%M%S") \
       --job-dir gs://$BUCKET/lstm_model/ \
       --region $REGION \
-      --master-image-uri us.gcr.io/$MY_PROJECT/lstm \
+      --master-image-uri gcr.io/$MY_PROJECT/lstm \
 	```
 	
