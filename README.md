@@ -1,4 +1,9 @@
-# imdb-dataset
+# LSTM model for the IMDB dataset
+
+**Author**: Leonardo Espín
+
+**Date**: 4/25/2021
+
 Training, deployment and testing code for a sentiment analysis model trained on the IMDB dataset.
 
 This repo uses a containerized workflow in Google Cloud to train the model. In a VM or cloud shell:
