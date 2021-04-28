@@ -21,12 +21,13 @@ This repo uses a containerized workflow in Google Cloud to train the model. In a
     docker image tag lstm gcr.io/$MY_PROJECT/lstm
     docker push gcr.io/$MY_PROJECT/lstm
     ```
-* Submit the training job to the AI Platform using the default model arguments
+* Submit the training job to the AI Platform using the default model arguments. The configuration file requests a Tesla T4 GPU
 
 	```bash
 	gcloud ai-platform jobs submit training lstm_$(date +"%Y%m%d_%H%M%S") \
       --job-dir gs://$BUCKET/lstm_model/ \
       --region $REGION \
       --master-image-uri gcr.io/$MY_PROJECT/lstm \
+      --config config/config.yaml
 	```
 	
