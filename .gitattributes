@@ -1,1 +1,1 @@
-tests/*.ipynb linguist-vendored
+tests/** linguist-vendored
